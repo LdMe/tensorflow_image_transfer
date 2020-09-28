@@ -6,8 +6,7 @@ docker-compose up
 
 To make changes in the image:
 
-docker-compose build
-docker-compose up
+docker-compose up --build
 
 To run dockerfile:
 
