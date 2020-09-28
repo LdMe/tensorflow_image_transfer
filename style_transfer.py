@@ -133,7 +133,7 @@ def main():
         def update(l):
             # Function to print loss
             global step
-            if step % 10 == 0:
+            if step % 100 == 0:
                 print('Step {}; loss {}'.format(step, l))
             step += 1
 
@@ -143,7 +143,4 @@ def main():
 
 
 if __name__ == '__main__':
-    print(os.listdir())
-    print("----------")
-    print(os.listdir("mnt"))
-    #main()
+    main()
