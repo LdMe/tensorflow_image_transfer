@@ -1,0 +1,9 @@
+version: "3"
+services:
+    style_transfer:
+        image: style_transfer
+        volumes:
+            - output:/output       
+        build: .
+volumes:
+    output:
