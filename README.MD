@@ -1,6 +1,7 @@
-Neural Style transfer with tensorflow
+# Neural Style transfer with tensorflow
 
-----------------------CPU----------------------------------------------------------------------------
+* ----------------------CPU----------------------------------------------------------------------------
+
 To run tensorflow-cpu version, first uncomment the second line of the dockerfile and comment the fourth.
 Then you can just run the docker-compose file or build the dockerfile and run it.
 
@@ -14,9 +15,9 @@ docker-compose up --build
 
 To run dockerfile:
 
-docker run -v output:/output <docker-image-name>
+* docker run -v output:/output \<docker-image-name>
 -----------------------------------------------------------------------------------------------------
----------------------GPU-----------------------------------------------------------------------------
+* ---------------------GPU-----------------------------------------------------------------------------
 
 To run tensorflow-gpu version you don't need to touch the dockerfile, but you need to do some installation steps before being able to run the docker image
 
@@ -43,7 +44,7 @@ You can also change the environment variables from the script:
 * CONTENT_WEIGHT => the weight for the content, the bigger numbers will give more importance to the content, making the result more similar to the input content file
 * STEPS => how many images you want to save, by default they will be saved more or less every 100 iterations, but that can be changed yn the last lines of style_transfer.py
 
-To change the environment variables, you have to go to line 19 in run.sh, and write -e <environment-variable>=<value> after --gpus all
+To change the environment variables, you have to go to line 19 in run.sh, and write -e \<environment-variable>=\<value> after --gpus all
 Example of line 19 in run.sh:
 
 docker run -it -v $volume:/output --gpus all -e STEPS=20 -e CONTENT_LAYER="block4_conv2"  -e STYLE_WEIGHT=1e5 style_transfer
