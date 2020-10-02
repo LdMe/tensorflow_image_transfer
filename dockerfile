@@ -1,7 +1,7 @@
 #CPU
-#FROM tensorflow/tensorflow:1.15.4-py3
+#FROM tensorflow/tensorflow:1.8.0-py3
 #GPU
-FROM tensorflow/tensorflow:1.15.4-gpu-py3
+FROM tensorflow/tensorflow:1.8.0-gpu-py3
 
 #unnecessary
 #RUN apt install -y libgl1-mesa-glx

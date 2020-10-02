@@ -136,7 +136,7 @@ def main():
 
         for i in range(STEPS):
             optimizer.minimize(sess, fetches=[loss], loss_callback=update)
-            imageio.imwrite('output/output'+str(step)+'.jpg', deprocess(sess.run(model['input'])))
+            imageio.imwrite('/output/output'+str(step)+'.jpg', deprocess(sess.run(model['input'])))
 
 
 if __name__ == '__main__':
