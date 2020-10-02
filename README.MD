@@ -1,6 +1,6 @@
 # Neural Style transfer with tensorflow
 
-* ----------------------CPU----------------------------------------------------------------------------
+## * ----------------------CPU----------------------------------------------------------------------------
 
 To run tensorflow-cpu version, first uncomment the second line of the dockerfile and comment the fourth.
 Then you can just run the docker-compose file or build the dockerfile and run it.
@@ -16,8 +16,7 @@ docker-compose up --build
 To run dockerfile:
 
 * docker run -v output:/output \<docker-image-name>
------------------------------------------------------------------------------------------------------
-* ---------------------GPU-----------------------------------------------------------------------------
+## * ---------------------GPU-----------------------------------------------------------------------------
 
 To run tensorflow-gpu version you don't need to touch the dockerfile, but you need to do some installation steps before being able to run the docker image
 
