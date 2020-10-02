@@ -11,11 +11,11 @@ from scipy.ndimage import zoom
 # Set a couple of constants
 CONTENT_PATH = os.environ["CONTENT_PATH"] if "CONTENT_PATH" in  os.environ.keys() else'content.jpg'
 STYLE_PATH = os.environ["STYLE_PATH"] if "STYLE_PATH" in  os.environ.keys() else 'style.jpg'
-CONTENT_LAYER = 'block4_conv2'
+CONTENT_LAYER = os.environ["CONTENT_LAYER"] if "CONTENT_LAYER" in  os.environ.keys() else  'block4_conv2'
 STYLE_LAYERS = ['block1_conv1', 'block2_conv1', 'block3_conv1', 'block4_conv1', 'block5_conv1']
-STYLE_WEIGHT = os.environ["STYLE_WEIGHT"] if "STYLE_WEIGHT" in  os.environ.keys() else 1e3
-STEPS= os.environ["STEPS"] if "STEPS" in  os.environ.keys() else 5
-CONTENT_WEIGHT = os.environ["CONTENT_WEIGHT"] if "CONTENT_WEIGHT" in  os.environ.keys() else 1e1
+STYLE_WEIGHT = np.float32(os.environ["STYLE_WEIGHT"]) if "STYLE_WEIGHT" in  os.environ.keys() else 1e3
+STEPS= int(os.environ["STEPS"]) if "STEPS" in  os.environ.keys() else 5
+CONTENT_WEIGHT = np.float32(os.environ["CONTENT_WEIGHT"]) if "CONTENT_WEIGHT" in  os.environ.keys() else 1e1
 TV_WEIGHT = 1e-4
 
 
@@ -86,9 +86,6 @@ def calc_style_loss(sess, model, style_img):
         a = sess.run(model[layer_name])
         a = tf.convert_to_tensor(a)
         x = model[layer_name]
-        print("-----------------------------")
-        print(a.shape[1])
-        print("------------------------------")
         size = a.shape[1].value * a.shape[2].value
         depth = a.shape[3].value
         gram_a = gram_matrix(a)
