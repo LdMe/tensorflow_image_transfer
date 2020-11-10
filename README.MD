@@ -41,7 +41,7 @@ You can also change the environment variables from the script:
 * **CONTENT_LAYER** => the layer of the network to take the image from, the inner it is (block2_conv1 > block1_conv2 ), the more it will look like the style.
 * **STYLE_WEIGHT** => the weight (importance) you want the style to have, bigger numbers will create more abstract results
 * **CONTENT_WEIGHT** => the weight for the content, the bigger numbers will give more importance to the content, making the result more similar to the input content file
-* **STEPS** => how many images you want to save, by default they will be saved more or less every 100 iterations, but that can be changed yn the last lines of style_transfer.py
+* **STEPS** => how many images you want to save, by default they will be saved more or less every 100 iterations, but that can be changed in the last lines of style_transfer.py
 
 To change the environment variables, you have to go to line 19 in run.sh, and write **-e \<environment-variable>=\<value>** after **--gpus all**  
 Example of line 19 in **run.sh**:
