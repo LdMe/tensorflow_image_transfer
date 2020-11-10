@@ -43,7 +43,7 @@ You can also change the environment variables from the script:
 * **CONTENT_WEIGHT** => the weight for the content, the bigger numbers will give more importance to the content, making the result more similar to the input content file
 * **STEPS** => how many images you want to save, by default they will be saved more or less every 100 iterations, but that can be changed yn the last lines of style_transfer.py
 
-To change the environment variables, you have to go to line 19 in run.sh, and write **-e \<environment-variable>=\<value>** after **--gpus all**
+To change the environment variables, you have to go to line 19 in run.sh, and write **-e \<environment-variable>=\<value>** after **--gpus all**  
 Example of line 19 in **run.sh**:
 
 **docker run -it -v $volume:/output --gpus all -e STEPS=20 -e CONTENT_LAYER="block4_conv2"  -e STYLE_WEIGHT=1e5 style_transfer**
